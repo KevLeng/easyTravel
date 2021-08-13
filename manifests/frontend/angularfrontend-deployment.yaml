@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: easytravel-angularfrontend
+  namespace: easytravel
+spec:
+  selector:
+    matchLabels:
+      app: easytravel-angularfrontend
+      product: easytravel
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: easytravel-angularfrontend
+        product: easytravel
+      annotations:
+        support.contact: "demoability@dynatrace.com"
+        support.channel: "#team-demoability"
+    spec:
+      containers:
+      - env:
+        - name: ET_BACKEND_URL
+          value: http://easytravel-backend:8080
+        image: dynatrace/easytravel-angular-frontend:2.0.0.3322
+        imagePullPolicy: "Always"
+        name: easytravel-angularfrontend
+        ports:
+        - containerPort: 8080
+        - containerPort: 8280
+        resources: {}
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 8080
+            scheme: HTTP
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 8080
+            scheme: HTTP
+          periodSeconds: 60
+          initialDelaySeconds: 240
+          successThreshold: 1
+          timeoutSeconds: 1
+      restartPolicy: Always
