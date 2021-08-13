@@ -1,4 +1,4 @@
-# Dynatrace easyravel Demo Application
+# Dynatrace easyTravel Demo Application
 
 Demo application for use on Kubernetes. This has been test on: GKE, AKS, EKS, MicroK8S & K3s.
 
@@ -80,7 +80,7 @@ export DT_DASHBOARD_OWNER="kevin.leng@dynatrace.com"
 The following will be created in your environment:
 
 * Web Applications (2) with the associated application detection rules
-* Synthetic tests (1 HTTP Check, 1 Browser Monitor, 1 Multi Step Transaction)
+* Synthetic tests (2 Browser Monitors)
 * Dashboards
 
 Optionally:
