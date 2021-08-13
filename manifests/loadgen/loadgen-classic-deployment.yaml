@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: loadgen
+  name: loadgen-classic
   namespace: easytravel
 spec:
   selector:
     matchLabels:
-      app: loadgen
+      app: loadgen-classic
       product: easytravel
   replicas: 1
   template:
     metadata:
       labels:
-        app: loadgen
+        app: loadgen-classic
         product: easytravel
       annotations:
         support.contact: "demoability@dynatrace.com"
@@ -36,6 +36,6 @@ spec:
           value: "5"
         image: dynatrace/easytravel-loadgen:2.0.0.3256
         imagePullPolicy: "Always"
-        name: easytravel-loadgen
+        name: loadgen-classic
         resources: {}
       restartPolicy: Always
