@@ -1,0 +1,17 @@
+config:
+    - classic_homepage : "homepage.json"
+    - angular_homepage : "homepage.json"
+
+classic_homepage:
+    - name: "Homepage (classic site)"
+    - domain: "{{ .Env.classic_frontend_ip }}"
+    - environment: "Production"
+    - port: "{{ .Env.classic_frontend_port }}"
+    - synth_geo_location_2: "{{ .Env.synth_geo_location_id_2 }}"
+
+angular_homepage:
+    - name: "Homepage (angular site)"
+    - domain: "{{ .Env.angular_frontend_ip }}"
+    - environment: "Production"
+    - port: "{{ .Env.angular_frontend_port }}"
+    - synth_geo_location_2: "{{ .Env.synth_geo_location_id_1 }}"

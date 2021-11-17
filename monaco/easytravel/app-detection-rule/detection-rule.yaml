@@ -1,0 +1,18 @@
+config:
+    - classic_detection_rule : "detection-rule.json"
+    - angular_detection_rule : "detection-rule.json"
+
+classic_detection_rule:
+    - name: "/easytravel/application-web/classic_application.name"
+    - id: "/easytravel/application-web/classic_application.id"
+    - pattern: "{{ .Env.classic_frontend_ip }}"
+
+
+angular_detection_rule:
+    - name: "/easytravel/application-web/angular_application.name"
+    - id: "/easytravel/application-web/angular_application.id"
+    - pattern: "{{ .Env.angular_frontend_ip }}"
+
+
+
+    

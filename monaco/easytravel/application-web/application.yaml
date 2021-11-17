@@ -1,0 +1,9 @@
+config:
+    - classic_application : "application.json"
+    - angular_application : "application.json"
+    
+classic_application:
+    - name: "easyTravel (classic)"
+
+angular_application:
+    - name: "easyTravel (angular)"

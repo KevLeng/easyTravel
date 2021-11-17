@@ -1,0 +1,6 @@
+config:
+    - highlevel_overview : "highlevel-dashboard.json"
+
+highlevel_overview:
+    - name: "Environment Overview Dashboard"
+    - owner: "{{ .Env.DT_DASHBOARD_OWNER }}"
